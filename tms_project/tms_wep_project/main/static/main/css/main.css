@@ -1,0 +1,117 @@
+/* Default Dark Theme - Relaxing Night Mode */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #1F1F2E; /* Deep navy */
+    color: #E0E0E0;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Light Theme - Focus Mode */
+body.light-theme {
+    background-color: #F2EEE5; /* Soft beige, warm tone */
+    color: #2A2D3E; /* Dark navy for easy reading */
+}
+
+/* Tab Container */
+.tab-container {
+    display: flex;
+    align-items: center;
+    background-color: #2A2D3E; /* Muted dark navy */
+    padding: 5px;
+    height: 35px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease-in-out;
+}
+
+body.light-theme .tab-container {
+    background-color: #E6DAC8; /* Warm sand color */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Tabs */
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3B3F55; /* Deep soft blue */
+    color: #A8E6CF; /* Mint green */
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 10px;
+    padding: 5px 12px;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #4A4D65;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+body.light-theme .tab {
+    background-color: #DED3B8; /* Calm Sand */
+    color: #2A2D3E; /* Navy text */
+    border: 1px solid #B0A896;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tab:hover {
+    background-color: #50577A; /* Softer blue */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.light-theme .tab:hover {
+    background-color: #CFC3A6; /* Soft beige */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Active Tab */
+.tab.active {
+    background-color: #6D7993; /* Soft work-mode blue */
+    font-weight: 600;
+    border-bottom: none;
+    box-shadow: 3px 3px 8px rgba(255, 255, 255, 0.2);
+}
+
+body.light-theme .tab.active {
+    background-color: #B0C4A7; /* Calming green */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    margin-left: auto;
+    padding: 6px 10px;
+    background: #4C5B7A; /* Muted purple-blue */
+    color: #E3E6F3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+#theme-toggle:hover {
+    background: #5C6D92;
+    transform: scale(1.05);
+}
+
+body.light-theme #theme-toggle {
+    background: #E6DAC8; /* Soft sand */
+    color: #2A2D3E;
+}
+
+body.light-theme #theme-toggle:hover {
+    background: #C3B89A; /* Slightly darker sand */
+}
+
+/* Hide all sub-tab containers by default */
+.sub-tabs {
+    display: none;
+}
+
+/* Show only the active one */
+.sub-tabs.active {
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+}
