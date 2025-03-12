@@ -1,0 +1,149 @@
+* {
+    color: #000;
+    text-decoration: none;
+    background-color: white;
+    background-image: none !important;
+    font-family: Georgia, "Times New Roman", Times, serif
+}
+
+body {
+    font-size: 12pt
+}
+
+#logo-block,
+.navbar,
+.footer,
+#legal,
+#menu,
+#header,
+#footer,
+#block-tables,
+#hor_buttons,
+.navigation,
+#topbar_page,
+.modal,
+.secondary-navigation,
+.hidden-xs,
+.btn-toolbar,
+.no-print {
+    display: none !important
+}
+
+#wrapper,
+#content {
+    width: auto;
+    border: 0;
+    margin: 0 5%;
+    padding: 0;
+    float: none !important
+}
+
+ul.data {
+    margin-left: 0;
+    padding-left: 0
+}
+
+ul.data li {
+    list-style-type: none
+}
+
+a:link,
+a:visited {
+    color: #520;
+    background: transparent;
+    font-weight: bold;
+    text-decoration: underline
+}
+
+a {
+    text-decoration: none !important
+}
+
+p,
+td,
+th,
+ul {
+    background-color: #fff;
+    color: #000;
+    font-family: "Times New Roman", Garamond, serif;
+    font-size: 10pt
+}
+
+h1 {
+    background: #fff;
+    color: #000;
+    font-size: 12pt
+}
+
+h2 {
+    background: #fff;
+    color: #000;
+    font-size: 30pt
+}
+
+table.table th,
+table.table td {
+    border-right: 2px solid #ffffff;
+    border-bottom: 1px solid #999999
+}
+
+table.table {
+    border-spacing: 0
+}
+
+.currency {
+    text-align: right
+}
+
+.pagination,
+.actions {
+    display: none
+}
+
+.page-break {
+    display: block;
+    page-break-before: always
+}
+
+.card-header {
+    background-color: #fff;
+    font-size: 12pt
+}
+
+.alert {
+    display: none
+}
+
+.invoice-field-type {
+    margin-right: 2px
+}
+
+.invoice-field {
+    margin-right: 5px
+}
+
+#invoice-loads {
+    margin-bottom: 10px
+}
+
+.row {
+    display: flex !important;
+    width: 511pt;
+    margin-bottom: 20px
+}
+
+.col-1 {
+    flex-basis: 8.333333% !important
+}
+
+.col-2 {
+    flex-basis: 16.666667% !important
+}
+
+.col-3 {
+    flex-basis: 25% !important
+}
+
+.col-4 {
+    flex-basis: 33.333333% !important
+}
