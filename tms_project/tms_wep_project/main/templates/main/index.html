@@ -4,48 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TMS-Project</title>
-    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>TMS Load Manager</title>
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <script src="{% static 'main/js/script.js' %}" defer></script>
+    <script src="{% static 'main/js/dark_mode.js' %}"></script>
 </head>
 <body>
-
-    <!-- Upper Navigation -->
-    <div class="tab-container">
-        <a href="#" class="tab upper-tab active" data-target="loads">My Loads</a>
-        <a href="#" class="tab upper-tab" data-target="info">Some Info</a>
-        <a href="#" class="tab upper-tab" data-target="customer">Customer Info</a>
-        <button id="theme-toggle">🌙</button>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="{% url 'dashboard_view' %}" class="menu-btn">Dashboard</a>
+            <a href="{% url 'loads_trips_view' %}" class="menu-btn">Loads/Trips</a>
+            <a href="{% url 'invoices_view' %}" class="menu-btn">Invoices</a>
+            <a href="{% url 'expenses_view' %}" class="menu-btn">Expenses</a>
+            <a href="{% url 'settings_view' %}" class="menu-btn">Settings & More</a>
+            <a href="{% url 'switch_eld_view' %}" class="menu-btn">Switch to ELD</a>
+        </div>
+        <div class="nav-right">
+            <a href="{% url 'logout' %}" class="menu-btn">Sign Out</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="button-group">
+            <a href="{% url 'add_planned_load' %}" class="action-btn">📄 Add Planned Load</a>
+            <a href="{% url 'add_trip' %}" class="action-btn">🚚 Add Trip</a>
+            <a href="{% url 'add_expenses' %}" class="action-btn">🛒 Add Expenses</a>
+            <a href="{% url 'add_invoice' %}" class="action-btn">📜 Add Invoice</a>
+            <a href="{% url 'add_maintenance' %}" class="action-btn">🔧 Add Maintenance</a>
+            <a href="{% url 'get_miles' %}" class="action-btn">📊 Get Miles</a>
+            <a href="{% url 'advanced_search' %}" class="action-btn">🔍 Advanced Search</a>
+            <a href="{% url 'profile' %}" class="action-btn">👤 Profile</a>
+            <button id="dark-mode-toggle">🌙 Toggle Dark Mode</button>
+        </div>
     </div>
-
-    <!-- Lower Navigation - Different sections -->
-    <div id="loads" class="sub-tabs active">
-        <a href="#" class="tab active">Company Info</a>
-        <a href="#" class="tab">Configuration Options</a>
-        <a href="#" class="tab">Bill From Companies</a>
-        <a href="#" class="tab">Load Status</a>
-        <a href="#" class="tab">CRM Call Note Types</a>
-        <a href="#" class="tab">Attachment Types</a>
-        <a href="#" class="tab">User Roles</a>
-    </div>
-
-    <div id="info" class="sub-tabs">
-        <a href="#" class="tab">Info 1</a>
-        <a href="#" class="tab">Info 2</a>
-        <a href="#" class="tab">Info 3</a>
-        <a href="#" class="tab">Info 4</a>
-    </div>
-
-    <div id="customer" class="sub-tabs">
-        <a href="#" class="tab">Customer A</a>
-        <a href="#" class="tab">Customer B</a>
-        <a href="#" class="tab">Customer C</a>
-    </div>
-
-    <script src="{% static 'main/js/tabs.js' %}"></script>
-    <script src="{% static 'main/js/theme.js' %}"></script>
-
+    <script src="{% static 'main/js/dark_mode.js' %}"></script>
 </body>
 </html>
-
-
