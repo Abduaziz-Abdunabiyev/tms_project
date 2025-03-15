@@ -13,7 +13,8 @@
     <nav class="navbar">
         <div class="nav-left">
             <a href="{% url 'dashboard_view' %}" class="menu-btn">Dashboard</a>
-            <a href="{% url 'loads_trips_view' %}" class="menu-btn">Loads/Trips</a>
+            <a href="{% url 'loads' %}" class="menu-btn">Loads</a>
+            <a href="{% url 'trips' %}" class="menu-btn">Trips</a>
             <a href="{% url 'invoices_view' %}" class="menu-btn">Invoices</a>
             <a href="{% url 'expenses_view' %}" class="menu-btn">Expenses</a>
             <a href="{% url 'settings_view' %}" class="menu-btn">Settings & More</a>
@@ -23,6 +24,11 @@
             <a href="{% url 'logout' %}" class="menu-btn">Sign Out</a>
         </div>
     </nav>
+    <div class="container">
+        {% block content %}{% endblock %}  <!-- 🔹 Dynamic Page Content Will Be Loaded Here -->
+    </div>
+
+    {% if request.path != '/loads/' %}
     <div class="container">
         <div class="button-group">
             <a href="{% url 'add_planned_load' %}" class="action-btn">📄 Add Planned Load</a>
@@ -36,6 +42,7 @@
             <button id="dark-mode-toggle">🌙 Toggle Dark Mode</button>
         </div>
     </div>
+    {% endif %}
     <script src="{% static 'main/js/dark_mode.js' %}"></script>
 </body>
 </html>

@@ -1,12 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import PlannedLoadForm
+
+
 def index(request):
     return render(request, 'main/index.html')
 
 def dashboard_view(request):
     return render(request, 'main/index.html')
 
-def loads_trips_view(request):
-    return render(request, 'loads_trips.html')
+def loads(request):
+    return render(request, 'main/loads.html')
+
+def trips(request):
+    return render(request, 'trips.html')
 
 def invoices_view(request):
     return render(request, 'invoices.html')
@@ -25,7 +31,16 @@ def logout_view(request):
     return render(request, 'logout.html')
 
 def add_planned_load(request):
-    return render(request, 'add_planned_load.html')
+    if request.method == "POST":
+        form = PlannedLoadForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('main/loads.html')  
+    else:
+        form = PlannedLoadForm()
+    
+    return render(request, 'main/add_planned_load.html', {'form': form})
+
 
 def add_trip(request):
     return render(request, 'add_trip.html')

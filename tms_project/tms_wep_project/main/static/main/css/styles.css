@@ -118,11 +118,156 @@ body.dark-mode #dark-mode-toggle:hover {
     background-color: #888;
 }
 
-
 .menu-btn {
     font-size: 15px;
 }
 
 .action-btn {
     font-size: 12px;
+}
+
+.button-container {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.button-container .action-btn {
+    display: inline-block;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.button-container .action-btn:hover {
+    background-color: #6faae9;
+}
+
+.planned-loads-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.basic-details {
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+.basic-details .card-header {
+    height: 50px;
+    padding: 1px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+}
+
+.row {
+    margin-left: 20px;
+}
+
+label {
+    font-size: 14px;
+    color: #262c32;
+}
+
+input, select {
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #80f675;
+}
+
+.custom_load_number {
+    margin-left: 10px;
+    padding-bottom: 8px;
+}
+
+.customerchangeinput {
+    padding: 5px 10px;
+}
+
+.main-wrapper {
+    margin: auto;
+    padding: 20px;
+}
+
+.stops-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.pickup-section, .delivery-section {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.form-label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.form-input, .form-textarea {
+    width: 60%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.action-button:hover {
+    background-color: #80f675;
+}
+
+.action-button {
+    background: #d9d9e3;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    color: #000000;
+    cursor: pointer;
+    padding: 5px 10px;
 }

@@ -1,0 +1,153 @@
+{% extends 'main/index.html' %}
+
+{% block content %}
+<div class="container2">
+    <h2 class="zagalovka">Add Planned Load <i class="fas fa-info-circle"></i></h2>
+    
+    <div class="card basic-details">
+        <div class="card-header">
+            <h4>Basic Details</h4>
+        </div>
+        <style>
+            .custom-input input {
+                width: 50%;
+                font-size: 15px;
+                padding: 4px 1px;
+            }
+            .customer-input select {
+                width: 100%;
+                height: 30px;
+            }
+        </style>
+        
+        <div class="customerchangeinput">
+            <label class="form-label text-primary"><strong>Custom Load Number</strong></label>
+            <div class="custom-input">
+                {{ form.custom_load_number }}
+            </div>
+        </div>
+        
+        <div class="customerchangeinput">
+            <label class="form-label text-primary"><strong>Customer</strong></label>
+            <div class="custom-input">
+                {{ form.customer }}
+            </div>
+            <button type="button" class="btn btn-primary mt-2">+ Create Customer</button>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="card-header">
+            <h4>Stops</h4>
+        </div>
+        <div class="stops-container">
+            <div id="pickup-section-container">
+                <div class="pickup-section">
+                    <h3>Pickup <button class="remove-btn" onclick="removeCard(this)">X</button></h3>
+                    <label>* Shipper</label>
+                    <button type="button" class="action-button">+ Create Shipper</button>
+                    <input type="text" placeholder="Search for name, street, city, or state">
+                    
+                    <label>* Pickup Date</label>
+                    <input type="date">
+                    
+                    <label>Driver Instructions</label>
+                    <textarea placeholder="ELD drivers can view in mobile app and trip report."></textarea>
+                    
+                    <label>BOL</label>
+                    <input type="text" placeholder="ELD driver can view, enter, and edit BOL">
+                    
+                    <label>Weight</label>
+                    <input type="number" placeholder="Enter total weight">
+                    
+                    <label>Commodity</label>
+                    <input type="text">
+                </div>
+                <button class="action-button" id="add-pickup">+ Add Another Pickup</button>
+            </div>
+            <!-- <button class="action-button" id="add-pickup">+ Add Another Pickup</button> -->
+            
+            <div id="delivery-section-container">
+                <div class="delivery-section">
+                    <h3>Delivery <button class="remove-btn" onclick="removeCard(this)">X</h3>
+                    <label>* Consignee</label>
+                    <button class="action-button">+ Create Consignee</button>
+                    <input type="text" placeholder="Search for name, street, city, or state">
+                    
+                    <label>* Delivery Date</label>
+                    <input type="date">
+                    
+                    <label>Driver Instructions</label>
+                    <textarea placeholder="ELD drivers can view in mobile app and trip report."></textarea>
+                    <button class="action-button" id="add-pickup">+ Add Another Delivery</button>
+                </div>
+                <button class="action-button primary" id="add-delivery">+ Add Another Delivery</button>
+                <button class="remove-btn" onclick="removeCard(this)">X</button>
+            </div>
+            <!-- <button class="action-button primary" id="add-delivery">+ Add Another Delivery</button> -->
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('add-pickup').addEventListener('click', function() {
+        let pickupContainer = document.getElementById('pickup-section-container');
+        let newPickup = document.createElement('div');
+        newPickup.classList.add('pickup-section');
+        newPickup.innerHTML = `
+            <h3>Pickup</h3>
+            <label>* Shipper</label>
+            <button type="button" class="action-button">+ Create Shipper</button>
+            <input type="text" placeholder="Search for name, street, city, or state">
+            
+            <label>* Pickup Date</label>
+            <input type="date">
+            
+            <label>Driver Instructions</label>
+            <textarea placeholder="ELD drivers can view in mobile app and trip report."></textarea>
+            
+            <label>BOL</label>
+            <input type="text" placeholder="ELD driver can view, enter, and edit BOL">
+            
+            <label>Weight</label>
+            <input type="number" placeholder="Enter total weight">
+            
+            <label>Commodity</label>
+            <input type="text">
+        `;
+        pickupContainer.appendChild(newPickup);
+    });
+    
+    document.getElementById('add-delivery').addEventListener('click', function() {
+        let deliveryContainer = document.getElementById('delivery-section-container');
+        let newDelivery = document.createElement('div');
+        newDelivery.classList.add('delivery-section');
+        newDelivery.innerHTML = `
+            <h3>Delivery</h3>
+            <label>* Consignee</label>
+            <button class="action-button">+ Create Consignee</button>
+            <input type="text" placeholder="Search for name, street, city, or state">
+            
+            <label>* Delivery Date</label>
+            <input type="date">
+            
+            <label>Driver Instructions</label>
+            <textarea placeholder="ELD drivers can view in mobile app and trip report."></textarea>
+        `;
+        deliveryContainer.appendChild(newDelivery);
+    });
+
+    function removeCard(btn) {
+        btn.parentElement.parentElement.remove();
+    }
+</script>
+<style>.remove-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+}</style>
+
+{% endblock %}

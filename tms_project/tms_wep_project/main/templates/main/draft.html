@@ -1,0 +1,111 @@
+{% extends 'main/index.html' %}
+
+{% block content %}
+<div class="container2">
+    <h2 class="zagalovka">Add Planned Load <i class="fas fa-info-circle"></i></h2>
+    
+    <div class="card basic-details">
+        <div class="card-header">
+            <h4>Basic Details</h4>
+        </div>
+        <div class="customerchangeinput">
+            <label class="form-label text-primary"><strong class="custom_load_number">Custom Load Number</strong></label>
+            <div class="custom-input">
+                {{ form.custom_load_number }}
+            </div>
+        </div>
+        <div class="customerchangeinput">
+            <label class="form-label text-primary"><strong class="custom_load_number">Customer</strong></label>
+            <div class="custom-input">
+                {{ form.customer }}
+            </div>
+            <button type="button" class="btn btn-primary mt-2">+ Create Customer</button>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="card-header">
+            <h4>Stops</h4>
+        </div>
+        <div class="stops-container" id="stops-container">
+            <div class="pickup-section">
+                <h3>Pickup <button class="remove-btn" onclick="removeCard(this)">X</button></h3>
+                <label>* Shipper</label>
+                <button type="button" class="action-button">+ Create Shipper</button>
+                <input type="text" class="form-input" placeholder="Search for name, street, city, or state">
+                <label>* Pickup Date</label>
+                <input type="date">
+                <label>Weight</label>
+                <input type="number" placeholder="Enter total weight">
+                <label>Commodity</label>
+                <input type="text">
+            </div>
+        </div>
+        <button class="action-button" onclick="addPickup()">+ Add Another Pickup</button>
+        <button class="action-button primary" onclick="addDelivery()">+ Add Another Delivery</button>
+    </div>
+</div>
+
+<script>
+function addPickup() {
+    let container = document.getElementById("stops-container");
+    let pickup = document.createElement("div");
+    pickup.classList.add("pickup-section");
+    pickup.innerHTML = `
+        <h3>Pickup <button class="remove-btn" onclick="removeCard(this)">X</button></h3>
+        <label>* Shipper</label>
+        <button type="button" class="action-button">+ Create Shipper</button>
+        <input type="text" class="form-input" placeholder="Search for name, street, city, or state">
+        <label>* Pickup Date</label>
+        <input type="date">
+        <label>Weight</label>
+        <input type="number" placeholder="Enter total weight">
+        <label>Commodity</label>
+        <input type="text">
+    `;
+    container.appendChild(pickup);
+}
+
+function addDelivery() {
+    let container = document.getElementById("stops-container");
+    let delivery = document.createElement("div");
+    delivery.classList.add("delivery-section");
+    delivery.innerHTML = `
+        <h3>Delivery <button class="remove-btn" onclick="removeCard(this)">X</button></h3>
+        <label>* Consignee</label>
+        <button class="action-button">+ Create Consignee</button>
+        <input type="text" placeholder="Search for name, street, city, or state">
+        <label>* Delivery Date</label>
+        <input type="date">
+    `;
+    container.appendChild(delivery);
+}
+
+function removeCard(button) {
+    button.parentElement.parentElement.remove();
+}
+</script>
+
+<style>
+.stops-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.pickup-section, .delivery-section {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.remove-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+}
+</style>
+{% endblock %}
